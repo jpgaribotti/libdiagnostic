@@ -18,6 +18,17 @@
 #define STR_DETAIL(val) #val
 #define STR(val) STR_DETAIL(val)
 
+/// Replaces assert for checking conditions in general.
+#define CHECK(condition) do                                                   \
+{                                                                             \
+  if (!(condition))                                                           \
+  {                                                                           \
+    throw std::logic_error (                                                  \
+        __FILE__ ":" STR(__LINE__) " -- ("                                    \
+        #condition ") == FALSE\n");                                           \
+  }                                                                           \
+} while (false)
+
 /// Check that parameters match function requirements.
 #define CHECK_ARG(condition) do                                               \
 {                                                                             \
@@ -42,6 +53,7 @@
 
 #elif defined(RELEASE)
 
+#define CHECK
 #define CHECK_ARG
 #define CHECK_RESULT
 
