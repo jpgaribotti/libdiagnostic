@@ -53,9 +53,9 @@
 
 #elif defined(RELEASE)
 
-#define CHECK
-#define CHECK_ARG
-#define CHECK_RESULT
+#define CHECK(condition)
+#define CHECK_ARG(condition)
+#define CHECK_RESULT(condition)
 
 #endif
 
