@@ -60,4 +60,3 @@
 #endif
 
 #endif	/* CHECK_HPP */
-
