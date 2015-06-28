@@ -12,11 +12,17 @@
 
 #include <iostream>
 
-#define LOG(message) std::cout << message << '\n';
+#define LOG(message) do \
+{ \
+  if (!message.empty()) \
+  { std::cout << message << std::endl; } \
+} while (false)
 
-#if defined(RELEASE)
+#elif defined(RELEASE)
 
 #define LOG(message)
+
+#endif
 
 #endif	/* LOG_HPP */
 

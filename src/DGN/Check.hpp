@@ -8,12 +8,12 @@
 #ifndef CHECK_HPP
 #define	CHECK_HPP
 
-#include <stdexcept>
-
 /// A set of macros to enable and disable different levels of error detection,
 /// reporting and handling.
 
 #if defined(DEBUG) || defined(SAFE)
+
+#include <stdexcept>
 
 #define STR_DETAIL(val) #val
 #define STR(val) STR_DETAIL(val)
