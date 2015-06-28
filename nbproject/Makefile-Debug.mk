@@ -35,7 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/DGN/Check.o
+	${OBJECTDIR}/src/DGN/Check.o \
+	${OBJECTDIR}/src/DGN/StackTrace.o
 
 
 # C Compiler Flags
@@ -68,6 +69,11 @@ ${OBJECTDIR}/src/DGN/Check.o: src/DGN/Check.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/DGN
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/DGN/Check.o src/DGN/Check.cpp
+
+${OBJECTDIR}/src/DGN/StackTrace.o: src/DGN/StackTrace.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/DGN
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/DGN/StackTrace.o src/DGN/StackTrace.cpp
 
 # Subprojects
 .build-subprojects:
